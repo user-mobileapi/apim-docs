@@ -1,6 +1,6 @@
 # apim-docs
 
-**This module will generate html files from markdown files inside md directory**; User doesn't need to have any knowledge about HTML, one just need to know a few simple basic [Markdown language](https://help.github.com/articles/markdown-basics/);
+**This module will generate html files from markdown files inside md directory**; User doesn't need to have any knowledge about HTML, one just need to know a few simple basic tags - [Markdown language](https://help.github.com/articles/markdown-basics/);
 
 ###How to use this module
 
@@ -15,7 +15,7 @@
 
       apimdocs.InitDocs('api');
   ```
-   *where api is directory we need to store documents(api/docs/html)*
+     *where api is directory we need to store documents(api/docs/html)*
 
 ###How does it work?
 
