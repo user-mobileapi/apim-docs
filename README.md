@@ -14,17 +14,16 @@
       var apimdocs  = require('apim-docs');
 
       apimdocs.InitDocs('api');
-
-      *where api is directory we need to store documents(api/docs/html)*
-
   ```
+      *where api is directory we need to store documents(api/docs/html)*
 
 ###How does it work?
 
  * module will read each markdown files in md directory and convert into html files correspondent, the html files will be kept in
-      the destination directory of app for example [api];the structure of the document will be *[api]/docs/html*;
+      the destination directory of app for example [api]; The structure of the document will be *[api]/docs/html*;
       Each html file shares the same template which is located inside lib/layout.html.
- * module will also create index.html which contain all links to each html on the fly inside *[api]/docs*;
+
+ * module will also create index.html which contains all links to each html on the fl,  it is kept inside *[api]/docs*;
       Index.html uses template which is located inside lib/indexLayout.html.
 
 
