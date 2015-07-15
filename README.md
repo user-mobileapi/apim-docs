@@ -27,6 +27,11 @@
       Index.html uses template which is located inside lib/indexLayout.html.
 
 
+### Note:
+ We need to follow some rules for naming markdown file:
+   1. name should be separated by *-* depending on how you want to display it index.html file,
+      for example: if you want to display the link as *my first link*, please name markdown file as *my-first-link-.md*
+   2. name should be *ended by -* and with extension *md*
 
 
 
