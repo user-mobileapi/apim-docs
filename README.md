@@ -4,8 +4,8 @@
 
 ###How to use this module
 
- * keep all the markdown files into md directory, then module will auto generate html files correspondent to .md files as well as index.html
-  which contain every links to each html files.
+ * keep all the markdown files in md directory, then module will auto generate html files corresponding to .md files as well as index.html
+  which contains every links to each html files.
 
  * How to call apim-docs module in app
 
@@ -15,16 +15,16 @@
 
       apimdocs.InitDocs('api');
 
-      _where api is directory we need to store documents (api/docs/html)_
+      *where api is directory we need to store documents(api/docs/html)*
 
   ```
 
 ###How does it work?
 
- * module will read each markdown files in md directory and convert into html files correspondent, the html files will keep in
-      the destination directory of app for example [api];the structure of the document will be _[api]/docs/html_;
+ * module will read each markdown files in md directory and convert into html files correspondent, the html files will be kept in
+      the destination directory of app for example [api];the structure of the document will be *[api]/docs/html*;
       Each html file shares the same template which is located inside lib/layout.html.
- * module will also create index.html which contain all links to each html on the fly inside_[api]/docs_;
+ * module will also create index.html which contain all links to each html on the fly inside *[api]/docs*;
       Index.html uses template which is located inside lib/indexLayout.html.
 
 

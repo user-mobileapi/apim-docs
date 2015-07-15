@@ -1,7 +1,7 @@
 
 var lib = require('./lib/converter.js');
 
-//InitDocs('destination');
+InitDocs('destination');
 function InitDocs(destination) {
     lib.copyDocsToApiDirectory(destination);
 }
