@@ -15,7 +15,7 @@
 
       apimdocs.InitDocs('api');
   ```
-     *where api is directory we need to store documents(api/docs/html)*
+     *where api must be under root directory which we need to store html files - [appName]/api/docs/html)*
 
 ###How does it work?
 
