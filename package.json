@@ -1,6 +1,6 @@
 {
   "name": "apim-docs",
-  "version": "1.2.0",
+  "version": "1.2.11",
   "description": "Mobile API documentation ",
   "main": "index.js",
   "scripts": {

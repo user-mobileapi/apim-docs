@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require('path');
 var ncp = require('ncp').ncp;
 
-
+var apiDir= path.dirname(path.dirname(__dirname)) ;
 
 // write the result to file inside html file
 function convertMarkdownToHtml (layoutFile,markdownFilePath,htmlFilePath){
@@ -54,12 +54,24 @@ function createDisplayedText(fileName){
 }
 
 // read all markdown files from markDownDirectory and convert them to html files
-function convertMarkdownsToHtmls (indexLayoutFile, contentLayoutFile, markDownDir,htmlDir,indexHtmlDir){
+function convertMarkdownsToHtmls (){
+
+    var indexLayoutFile = path.join(apiDir,'/docs/lib/indexLayout.html'); //'api/docs/lib/indexLayout.html';
+    var contentLayoutFile = path.join(apiDir,'/docs/lib/layout.html');
+    var markDownDir= path.join(apiDir,'/docs/md');
+
+    // these 2 is the app dir/api
+    var indexHtmlDir='api/docs';
+    var htmlDir = 'api/docs/html';
+    //end
 
     var files = fs.readdirSync(markDownDir);
     // delete markdown/index.md  if exist
     var indexFilePath  = markDownDir+'/index.md';
 
+    if (!fs.existsSync(htmlDir)){
+        fs.mkdirSync(htmlDir);
+    }
     if(fs.existsSync(indexFilePath))
         fs.unlinkSync(indexFilePath);
     // convert all md file into html and save it into html folder except index.md which we are going to convert lastly.
@@ -78,17 +90,18 @@ function convertMarkdownsToHtmls (indexLayoutFile, contentLayoutFile, markDownDi
     //end convert index.md
 }
 
-function copyDocsToApiDirectory(source,destination){
+function copyDocsToApiDirectory(destination){
     ncp.limit = 16;
+    // __dirname will return the current directory where converter is :.....api/docs/lib
+    console.log(apiDir);
 
-    ncp(source, destination, function (err) {
+    ncp(apiDir, destination, function (err) {
         if (err) {
             return console.error(err);
         }
-        console.log('done!');
+        convertMarkdownsToHtmls();
     });
 }
 module.exports ={
-    convertMarkdownsToHtmls:convertMarkdownsToHtmls,
     copyDocsToApiDirectory: copyDocsToApiDirectory
 }
